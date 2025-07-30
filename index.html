@@ -1,13 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="./js/main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylee.css">
+    
+</head>
+<body>
+
+    <header>
+        <button id="download">Download PDF</button>
+    </header>
+
+    <main id="content">
+        <section class="imgBox"> 
+            <img class="profileImg" src="avatar.png" alt="Ваше фото"> 
+        </section> 
+        <section class="nameBox">
+            <textarea rows="1" class="editText-medium" style="background-color: #F0F0F0;">Hello 👋🏻I'm</textarea>
+            <textarea rows="1" class="editText-name" >Polin Sini</textarea>
+            <textarea rows="1" class="editText-medium" style="background-color: #F0F0F0;">UX/UI designer</textarea>
+        </section>
+
+        <section class="languageBox">
+            <div class="header-section">
+                <input type="text" class="editText-title" value="Languages">
+            </div>
+            
+            <div class="miniLanguagebox">
+                <input type="text" class="editText"  value="English" >
+                <span class="textMirror"></span>
+            
+                <input type="range" id="volume-1" class="volume"
+                min="0" max="100" value="30">
+            </div>
+            <div class="miniLanguagebox">
+                <input type="text" class="editText"  value="Russian" >
+                <span class="textMirror"></span> 
+
+                <input type="range" id="volume-2" class="volume"
+                min="0" max="100" value="70">
+            </div>
+
+            <div class="miniLanguagebox">
+                <input type="text" class="editText" value="Chineese" >
+                <span class="textMirror"></span>
+
+                <input type="range" id="volume-3" class="volume"
+                min="0" max="100" value="40">
+            </div>
+        </section>
+
+        <section class="experienceBox">
+
+            <div class="header-section">
+                <input type="text" class="editText-title" value="Experience" >
+            </div>
+            
+            <div class="articles-container" >
+            <article id = "first-exp" class="miniExperienceBox" >
+                <textarea rows="1" class="editText-regular"  >Jun. 2023 - Present</textarea>
+                <div class="Experience-big">
+                    <div class="Experience-main">
+                        
+                        <textarea  class="editText-medium">Marketing Manager</textarea>
+                        <textarea  class="editText-regular">Pankayam | Full-time</textarea>
+                    </div>
+                    <div></div>
+                    <ul style="width: 100%;">
+                        <li style="width: 100%;"><textarea rows="1" class="editText-regular" style="width:100%; background-color: rgba(150, 150, 210,0);color: white;" >Strategy development and planning of campaigns that promote the business and generate genuine traffic</textarea>
+                        </li>
+
+                        <li style="width: 100%;"><textarea rows="1" class="editText-regular" style="width:100%; background-color: rgba(150, 150, 210,0);color: white;" >SEO Content Creation for Blogs, Website, Social media</textarea>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            </article>
+        </section>
+
+        <section class="toolBox">
+            <input type="text" class="editText-title" value="Tools" >
+            <img src="tools.svg">
+        </section>
+
+        <section class="educationBox"> 
+            <input type="text" class="editText-title" value="Education" >
+            <div class="articles-container-edu">
+                <article class="miniEduBox" id="first-edu">
+                    <textarea rows="1" class="editText-medium">2023</textarea>
+                    <textarea rows="1" class="editText-medium">UI/UX</textarea>
+                    <textarea rows="1" class="editText-regular">#UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</textarea>
+                    <textarea rows="1" class="editText-regular" style="margin: 1%;">Coursera</textarea>
+                </article>
+            </div>
+        </section>
+        <div class="extraBox">
+            <section class="interestBox">
+                <input type="text" class="editText-title" value="Interest">
+
+                <div class="articles-container-interest">
+                </div>
+            </section>
+
+            <section class="contact">
+                <textarea rows="1" class="editText-medium">Let´s chat! I´m ready to work on excinting projects</textarea>
+                <textarea rows="1" class="editText-regular">srkarthik.designscape@gmail.com</textarea>
+            </section>
+        </div>
+    </main>
+    <script src="script.js"></script>
+
+  
+</body>
 </html>
