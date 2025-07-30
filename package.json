@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "vite": "^5.2.0"
   }
 }
