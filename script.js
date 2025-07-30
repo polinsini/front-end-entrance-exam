@@ -52,8 +52,10 @@ function createEduArticle(date, name, description, company){
   const article = document.createElement('article');
   article.className = 'miniEduBox';
   article.innerHTML = `<textarea rows="1" class="editText-medium">${date}</textarea>
-                <textarea rows="1" class="editText-medium">${name}</textarea>
-                <textarea rows="1" class="editText-regular">${description}</textarea>
+                <div class="center-miniEdu">
+                  <textarea rows="1" class="editText-medium">${name}</textarea>
+                  <textarea rows="1" class="editText-regular">${description}</textarea>
+                </div>
                 <textarea rows="1" class="editText-regular"">${company}</textarea>`
   return article;
 }
@@ -126,7 +128,8 @@ function changeInputWidth(input) {
     console.log(textarea.textContent, textarea.style.height)
 }
 
-
+document.addEventListener('DOMContentLoaded', function() {
+    // Находим все textarea
 
 window.addEventListener('resize', function() {
     document.querySelectorAll('textarea').forEach(textarea => {
@@ -138,7 +141,52 @@ window.addEventListener('resize', function() {
 textareas.forEach((textarea, index) => {
     textarea.addEventListener('input', function() {
         localStorage.setItem(`textarea-${index}`, this.value);
+        changeHeight(this);
+    });
+    // Устанавливаем начальную высоту
+    changeHeight(textarea); 
+});
+inputs.forEach((input, index) => {
+      input.addEventListener('input', function() {
+          localStorage.setItem(`input-${index}`, this.value); // Сохраняем значение в localStorage
+          changeInputWidth(this); // Обновляем высоту при вводе
+      });
+      changeInputWidth(input); // Устанавливаем начальную высоту
+  });
+
+        textareas.forEach((textarea, index) => {
+      
+        const savedText = localStorage.getItem(`textarea-${index}`);
+
+        if (savedText) {
+            textarea.value = savedText;
+            changeHeight(textarea);
+        }
+    });
+
+    inputs.forEach((input, index) => {
+      
+        const savedText = localStorage.getItem(`input-${index}`);
+   
+        if (savedText) {
+            input.value = savedText;
+            changeInputWidth(input); // Устанавливаем высоту после загрузки
+        }
+    });
+
+});
+/*
+window.addEventListener('resize', function() {
+    document.querySelectorAll('textarea').forEach(textarea => {
         changeHeight(textarea);
+    });
+});
+
+
+textareas.forEach((textarea, index) => {
+    textarea.addEventListener('input', function() {
+        localStorage.setItem(`textarea-${index}`, this.value);
+        changeHeight(this);
     });
     // Устанавливаем начальную высоту
     changeHeight(textarea); 
@@ -177,14 +225,10 @@ function loadData() {
 
 }
 
-
-
-
-
 loadData()
 
 
-
+*/
 
 /*
 function resizeInput(input) {
@@ -200,8 +244,15 @@ function resizeInput(input) {
 
 function changeForPDF(container) {
   // Добавляем margin-bottom: 20px для всех <section>
+  container.className='pdf-edit'
+
   container.querySelectorAll('section').forEach(section => {
+    if (section.className!=='imgBox'){
+      
+       section.style.padding='15px';
+    }
     section.style.marginBottom = '20px';
+    
   });
 
   // Заменяем все <textarea> и <input> визуальными div
@@ -256,6 +307,7 @@ function changeForPDF(container) {
 
 
 function deleteChangePDF(container) {
+  container.className='content'
   container.querySelectorAll('[div-for-pdf]').forEach(div => {
     const prev = div.previousSibling;
     if (prev && (prev.tagName === 'TEXTAREA' || prev.tagName === 'INPUT')) {
@@ -283,6 +335,7 @@ function deleteChangePDF(container) {
 }
 
 document.getElementById("download").addEventListener("click", function () {
+  alert('Подтвердите скачивание файла. Это займет немного времени')
   const container = document.getElementById("content");
 
   changeForPDF(container);
@@ -298,8 +351,6 @@ document.getElementById("download").addEventListener("click", function () {
     const pdf = new jspdf.jsPDF("p", "pt", "a4");
 
     const pageWidth = 595*0.90;
-    const pageHeight =  842*0.90;
-
     const imgWidth = pageWidth;
     const imgHeight = canvas.height * imgWidth / canvas.width;
 
@@ -309,7 +360,7 @@ document.getElementById("download").addEventListener("click", function () {
     const x = (imgWidth ) / 2;
     const y = (imgHeight ) / 2;
 
-    pdf.addImage(imgData, "PNG", 30, 0, imgWidth, imgHeight);
+    pdf.addImage(imgData, "PNG", 30, 30, imgWidth, imgHeight);
 
     pdf.save("resume.pdf");
 

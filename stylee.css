@@ -153,7 +153,7 @@ main{
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
  
 
-    max-width: 210mm;
+    max-width: 1000px;
    
     
 }
@@ -212,10 +212,11 @@ main{
   }
 
 .volume{
-  background-color: white;
   accent-color: rgb(150, 150, 210);
-  width: 100%;
+  width: 60%;
+
 }
+
 .miniLanguagebox{
   display: flex;
   justify-content: space-between;
@@ -333,8 +334,8 @@ width: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
+    gap: 4px;
+  justify-content:space-between ;
   margin-bottom: 3%;
   width: 48%;
 }
@@ -350,14 +351,22 @@ width: 100%;
 }
 
 .educationBox .editText-medium{
-    font-size: 0.85em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .educationBox .editText-regular{
-    font-size: 0.63em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 /*-------extraBOX---------*/
 .extraBox{
   width: 48%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: stretch;
 }
 
 /*----contact---------*/
@@ -514,5 +523,11 @@ input, textarea {
   white-space: pre-wrap;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+.pdf-edit{
+    min-width: 1024px !important; 
+    overflow-x: auto !important;  
+    
 }
 
