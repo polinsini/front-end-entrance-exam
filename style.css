@@ -1,72 +1,60 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*шрифты*/
 
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-
 
 textarea {
-    height: auto;
-    min-height: 10px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 1em;
-    resize: none; 
-    opacity:1;
-    color: black;
-    border: none;
-    overflow: hidden;
-    margin: 0;
+  height: auto;
+  min-height: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  resize: none;
+  opacity: 1;
+  color: black;
+  border: none;
+  overflow: hidden;
+  margin: 0;
 }
-.imgBox{
+.imgBox {
   width: 20%;
   padding: 0%;
 }
 
-
-.imgBox img{
-   
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-    
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
 }
 .editText-regular {
   font-size: 0.7em;
-
 }
 
 .editText-medium {
-    font-size: 0.9em;
+  font-size: 0.9em;
 }
 
-.miniLanguagebox .editText{
+.miniLanguagebox .editText {
   width: 100%;
 }
-
 
 /*----experience-----*/
 
 .experienceBox {
-    width: 75%;
-    height: 100%;
-   
+  width: 75%;
+  height: 100%;
 }
 
-
 .miniExperienceBox {
-    border-radius: 20px;
-    background-color: white;
-    padding: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-
-
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .miniExperienceBox .editText-regular {
@@ -74,61 +62,58 @@ textarea {
 }
 
 .Experience-big {
-    display: flex;
-    width: 30%;
+  display: flex;
+  width: 30%;
 }
 
 ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 ul li {
-    position: relative;
-    padding-left: 25px;
-    display: flex;
-    justify-content: center;
+  position: relative;
+  padding-left: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 ul li::before {
-    content: '';
-    position: absolute;
-    left: 10px; 
-    top: 35%;
-    width: 5px; 
-    height: 5px;
-    border-radius: 50%; 
-    background: black; 
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 35%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: black;
 }
 
 #first-exp ul li::before {
-    background: white; 
+  background: white;
 }
 
 .Experience-main {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
-    gap:0px;
+  flex-direction: column;
+  gap: 0px;
 }
 
-
-#first-exp{
+#first-exp {
   background-color: rgb(150, 150, 210);
   color: white;
 }
 
-#first-exp .editText-regular, #first-exp .editText-medium{
-    background-color: rgb(150, 150, 210);;
-    color: white;
-    
+#first-exp .editText-regular,
+#first-exp .editText-medium {
+  background-color: rgb(150, 150, 210);
+  color: white;
 }
 
-textarea.editText-regular{
+textarea.editText-regular {
   margin: none;
-  
 }
 
 /*-------tools-------*/
@@ -136,91 +121,88 @@ textarea.editText-regular{
 .toolBox {
   padding: 10px;
   width: 23%;
-
 }
 
-.toolBox img{
-
+.toolBox img {
   height: 90%;
-    width: 70% ;
-    margin: 0px;
-    aspect-ratio: 1/1;     
-    object-fit: cover;
+  width: 70%;
+  margin: 0px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 /*----EDU-----*/
 
-.educationBox{
-    width: 50%;
-    padding: 20px;
-    display: flex;
-    
-    justify-content: space-between;
+.educationBox {
+  width: 50%;
+  padding: 20px;
+  display: flex;
 
+  justify-content: space-between;
 }
-.articles-container-edu{
+.articles-container-edu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap:1%
+  gap: 1%;
 }
-.miniEduBox{
+.miniEduBox {
   border-radius: 20px;
   background-color: white;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  
+
   margin-bottom: 3%;
   width: 48%;
 }
 
-#first-edu{
+#first-edu {
   background-color: rgb(150, 150, 210);
   color: white;
 }
 
-#first-edu .editText-regular, #first-edu .editText-medium{
-    background-color: rgb(150, 150, 210);;
-    color: white;
+#first-edu .editText-regular,
+#first-edu .editText-medium {
+  background-color: rgb(150, 150, 210);
+  color: white;
 }
 /*-------extraBOX---------*/
-.extraBox{
+.extraBox {
   width: 48%;
 }
 
 /*----contact---------*/
-.contact{
+.contact {
   width: 100%;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   background-color: black;
-  color:white;
+  color: white;
 }
 
-.contact .editText-regular, .contact .editText-medium{
-    background-color: rgb(0, 0, 0);;
-    color: white;
+.contact .editText-regular,
+.contact .editText-medium {
+  background-color: rgb(0, 0, 0);
+  color: white;
 }
-
 
 /*----interest---------*/
-.interestBox{
-    width: 410px;
-    width: 100%;
+.interestBox {
+  width: 410px;
+  width: 100%;
 }
 
-.articles-container-interest{
+.articles-container-interest {
   display: flex;
   flex-direction: row;
-  justify-content:left;
+  justify-content: left;
   flex-wrap: wrap;
-  
 }
 
-.articles-container-interest .editText-regular{
+.articles-container-interest .editText-regular {
   border-radius: 30px;
   text-align: center;
   min-width: 2ch;
@@ -229,96 +211,92 @@ textarea.editText-regular{
   padding: 1.5%;
   display: inline-block; /* Позволяет элементу изменять размер */
   height: auto; /* Высота остается авто */
-  overflow: hidden; 
+  overflow: hidden;
 }
-
-
 
 /*8888888888888888888888888888*/
-label{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
-input, span{
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1em;
+input,
+span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1em;
 }
-
-
 
 /*-------------------------------*/
-body{
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 20px;
+body {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 20px;
 }
 
-header{
-    width: 100%;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
+header {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
 }
 
-header button{
-    border-radius: 20px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    border: none;
-    background-color: rgb(150, 150, 210);
-    color: white;
-    padding: 20px;
+header button {
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  border: none;
+  background-color: rgb(150, 150, 210);
+  color: white;
+  padding: 20px;
 
-    transition: background-color 0.3s, border 0.3s;
+  transition:
+    background-color 0.3s,
+    border 0.3s;
 }
 
 header button:hover {
-    background-color: white; 
-    color: rgb(150, 150, 210); 
-    border: 4px solid  rgb(150, 150, 210);
+  background-color: white;
+  color: rgb(150, 150, 210);
+  border: 4px solid rgb(150, 150, 210);
 }
 /*----------------------------*/
 
-main{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    padding: 0 20px; 
-    gap: 2%;
-    
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    max-width: 1000px;
-    max-width: 825px;
-    max-height: 1167px;
-    
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  gap: 2%;
+
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  max-width: 825px;
+  max-height: 1167px;
 }
 
+section {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
 
-
-section{
-    position: relative;
-    overflow: hidden;
-    background-color: #F0F0F0;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 15px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .wave {
@@ -337,83 +315,70 @@ section{
   }
 }
 
-
-.imageBox{
-    padding: 0px;
-    width: 2%;
+.imageBox {
+  padding: 0px;
+  width: 2%;
 }
 
-.nameBox{
-
-    width: 205px;
-    width: 23%;
-    
+.nameBox {
+  width: 205px;
+  width: 23%;
 }
 
-.languageBox{
-    width: 25vw;
-    width: 410px;
-    width: 45%;
-    justify-content: stretch;
+.languageBox {
+  width: 25vw;
+  width: 410px;
+  width: 45%;
+  justify-content: stretch;
 }
 
-
-
-.toolBox{
-    width: 205px;
-    width: 23%;
+.toolBox {
+  width: 205px;
+  width: 23%;
 }
 
-
-
-
-
-
-.volume{
+.volume {
   background-color: white;
   accent-color: rgb(150, 150, 210);
   width: 100%;
 }
 
-.miniLanguagebox{
+.miniLanguagebox {
   display: flex;
   justify-content: space-between;
-  align-items:end;
+  align-items: end;
   gap: 2%;
   padding-top: 3%;
-  
 }
 
 .editText {
-    border: none;
-    background: none;
-    border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
-    min-width: 50px;
-    width: 30%;
-    box-sizing: content-box;
-    width: 50%;
-    font-size: 0.7em;
-  }
+  border: none;
+  background: none;
+  border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
+  min-width: 50px;
+  width: 30%;
+  box-sizing: content-box;
+  width: 50%;
+  font-size: 0.7em;
+}
 
-  .editText-title {
-    font-size: 1em;
-    border: none;
-    background: none;
-    border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
-    margin-bottom: 1%;
-  }
+.editText-title {
+  font-size: 1em;
+  border: none;
+  background: none;
+  border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
+  margin-bottom: 1%;
+}
 
-  
-  .editText-name {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 1.5em;
-    border: none;
-    background: none;
-    border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
-    
-  }
+.editText-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5em;
+  border: none;
+  background: none;
+  border-bottom: 1px dashed gray; /* Подчеркивание для визуального указания */
+}
 
 .textMirror {
   position: absolute;
@@ -431,10 +396,8 @@ section{
   background: white;
   box-sizing: border-box;
   overflow: hidden;
-  zoom: 1; 
+  zoom: 1;
 }
-
-
 
 /* Планшеты */
 @media screen and (max-width: 600px) {
@@ -465,9 +428,6 @@ section{
   }
 }
 
-
-
-
 /* Телефоны */
 @media screen and (max-width: 600px) {
   body {
@@ -477,33 +437,33 @@ section{
   main {
     flex-direction: row;
     flex-wrap: wrap;
- 
+
     align-items: stretch;
     padding: 15px;
-    gap: 10px; 
+    gap: 10px;
   }
 
   section {
     width: 100% !important;
     padding: 15px;
   }
-.imgBox{
+  .imgBox {
     width: 48% !important;
     margin: 0;
   }
- .nameBox{
+  .nameBox {
     width: 48% !important;
     margin: 0;
- }
+  }
 
   img.profileImg {
     width: 100% !important;
     height: 100% !important;
     margin: 0px;
-    aspect-ratio: 1/1;     
+    aspect-ratio: 1/1;
     object-fit: cover;
   }
-  
+
   .toolBox,
   .languageBox,
   .experienceBox,
@@ -512,19 +472,20 @@ section{
     width: 100% !important;
   }
 
-  .Experience-big{
+  .Experience-big {
     flex-direction: column;
   }
 
-  .extraBox{
+  .extraBox {
     display: flex;
     flex-direction: row !important;
     justify-content: space-between;
     width: 100%;
   }
-    .interestBox, .contact{
-      width: 48% !important;
-    }
+  .interestBox,
+  .contact {
+    width: 48% !important;
+  }
   header {
     flex-direction: column;
     align-items: center;
@@ -538,72 +499,64 @@ section{
   }
 }
 
-
-
-
 /* Принудительная desktop-версия для PDF */
 body.fixed-layout #content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    
-    gap: 3%;
-    
-    max-width: 940px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
 
-    max-width: 940px;
+  gap: 3%;
+
+  max-width: 940px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+
+  max-width: 940px;
 }
 
-body.fixed-layout .section{
-    position: relative;
-    overflow: hidden;
-    background-color: #0b0a0a;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 20px;
+body.fixed-layout .section {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b0a0a;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
-body.fixed-layout .imageBox{
-    padding: 0px;
+body.fixed-layout .imageBox {
+  padding: 0px;
 }
 
-body.fixed-layout .nameBox{
-
-    width: 205px;
-    width: 23%;
+body.fixed-layout .nameBox {
+  width: 205px;
+  width: 23%;
 }
 
-body.fixed-layout .languageBox{
-    width: 25vw;
-    width: 410px;
-    width: 45%;
+body.fixed-layout .languageBox {
+  width: 25vw;
+  width: 410px;
+  width: 45%;
 }
 
-body.fixed-layout .experienceBox{
-    width: 605px;
-    width: 66%;
+body.fixed-layout .experienceBox {
+  width: 605px;
+  width: 66%;
 }
 
-body.fixed-layout .toolBox{
-    width: 205px;
-    width: 23%;
+body.fixed-layout .toolBox {
+  width: 205px;
+  width: 23%;
 }
 
-body.fixed-layout .educationBox{
-    width: 410px;
-    width: 45%;
+body.fixed-layout .educationBox {
+  width: 410px;
+  width: 45%;
 }
 
-body.fixed-layout .interestBox{
-    width: 410px;
-    width: 45%;
+body.fixed-layout .interestBox {
+  width: 410px;
+  width: 45%;
 }
-
-
-
-
