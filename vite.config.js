@@ -14,6 +14,9 @@ export default defineConfig({
     assetsDir: 'assets',
     rollupOptions: {
       input: 'index.html'
-    }}
+    }},
+  
+    base: '/front-end-entrance-exam/'
+    
 });
 
