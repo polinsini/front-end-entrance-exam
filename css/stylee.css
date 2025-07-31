@@ -135,9 +135,9 @@ header button {
 }
 
 header button:hover {
-    background-color: white; 
-    color: rgb(150, 150, 210); 
-    border: 4px solid  rgb(150, 150, 210);
+  background-color: white;
+  color: rgb(150, 150, 210);
+  border: 4px solid rgb(150, 150, 210);
 }
 /*само резюме*/
 main {

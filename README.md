@@ -11,19 +11,28 @@
 3. Реализована кнопка "Download PDF", которая преобразует текущую версию резюме в формат PDF и начинает загрузку файла на компьютер пользователя, после его подтверждения скачивания. В мобильной версии PDF-формат резюме остается таким же как и в декстопной.
 4. Есть анимация Material Wave
 
-
 ### Где найти сайт
+
 Прямо по ссылке ниже
 
 https://polinsini.github.io/front-end-entrance-exam/
 
+### Как запустить сайт локально
 
+После клонирование на свой ПК
+npm init
 
+npm run build
+npm serve dist/
+
+ИЛИ
+
+версия разработчика
+npm run dev
 
 ## Послание для проверяющего
 
 О функции contenteditable="true" я узнала в самый послденйи момент, поэтому большинство текстовых полей создано с помощью input и textarea, что усложнило конвертацию в PDF. Спасибо за понимание!
-
 
 ![alt text](https://img-webcalypt.ru/uploads/admin/images/meme-templates/m3CpqOob1bdssiK2XXlckumbJooHlOGS.jpg)
 

@@ -1,4 +1,3 @@
-
 document.querySelectorAll('section').forEach((section) => {
   section.addEventListener('click', function (e) {
     //mousedown
@@ -22,7 +21,6 @@ document.querySelectorAll('section').forEach((section) => {
     });
   });
 });
-
 
 const textareas = document.querySelectorAll('textarea');
 const inputs = document.querySelectorAll('input');
@@ -191,11 +189,9 @@ function deleteChangePDF(container) {
   });
 }
 import html2canvas from 'html2canvas';
-import jspdf from "jspdf";
-
+import jspdf from 'jspdf';
 
 document.getElementById('download').addEventListener('click', function () {
-  
   const container = document.getElementById('content');
 
   changeForPDF(container);
@@ -208,7 +204,7 @@ document.getElementById('download').addEventListener('click', function () {
     windowHeight: container.scrollHeight,
   }).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
-  
+
     const pdf = new jspdf('p', 'pt', 'a4');
 
     const pageWidth = 595 * 0.9;
