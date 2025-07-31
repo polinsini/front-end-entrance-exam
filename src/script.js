@@ -190,8 +190,9 @@ function deleteChangePDF(container) {
     });
   });
 }
+
 import html2canvas from 'html2canvas';
-import jspdf from "jspdf";
+//import { jsPDF } from "jspdf";
 
 
 document.getElementById('download').addEventListener('click', function () {
@@ -209,7 +210,7 @@ document.getElementById('download').addEventListener('click', function () {
   }).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
   
-    const pdf = new jspdf('p', 'pt', 'a4');
+    const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
 
     const pageWidth = 595 * 0.9;
     const imgWidth = pageWidth;
