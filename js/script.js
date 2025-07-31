@@ -1,3 +1,4 @@
+
 document.querySelectorAll('section').forEach((section) => {
   section.addEventListener('click', function (e) {
     //mousedown
