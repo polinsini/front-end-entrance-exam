@@ -6,7 +6,7 @@
   
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp -r sources/css sources/js dist/",
+    "build": "vite build && cp -r css js dist/",
     "preview": "vite preview",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
