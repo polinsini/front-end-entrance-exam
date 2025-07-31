@@ -20,11 +20,11 @@ https://polinsini.github.io/front-end-entrance-exam/
 
 
 
-(Послание для проверяющего)
+## Послание для проверяющего
 
-о функции contenteditable="true" я узнала в самый послденйи момент, поэтому большинство текстовых полей создано с помощью input и textarea, что конвертацию в PDF 
+О функции contenteditable="true" я узнала в самый послденйи момент, поэтому большинство текстовых полей создано с помощью input и textarea, что усложнило конвертацию в PDF. Спасибо за понимание!
 
 
 ![alt text](https://img-webcalypt.ru/uploads/admin/images/meme-templates/m3CpqOob1bdssiK2XXlckumbJooHlOGS.jpg)
 
-До встречи!
+## До встречи!
