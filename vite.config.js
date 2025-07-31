@@ -9,5 +9,11 @@ export default defineConfig({
       html2canvas: 'html2canvas',
     }),
   ],
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: 'index.html'
+    }}
 });
 

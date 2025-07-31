@@ -6,14 +6,14 @@
   
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp -r sources/css sources/js dist/",
     "preview": "vite preview",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
     "prettier": "prettier --write .",
     "jshint": "jshint ."
   },
-  
+
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "@types/html2canvas": "^0.5.35",
