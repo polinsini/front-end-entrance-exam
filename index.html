@@ -24,23 +24,15 @@
     <main id="content">
       <section class="imgBox">
         <h1></h1>
-        <img class="profileImg" src="avatar.png" alt="Ваше фото" />
+        <img class="profileImg" src="sources/avatar.png" alt="Ваше фото" />
       </section>
       <section class="nameBox">
         <h1></h1>
-        <textarea
-          rows="1"
-          class="editText-medium"
-          style="background-color: #f0f0f0"
-        >
+        <textarea rows="1" class="editText-medium" style="background-color: #f0f0f0">
 Hello 👋🏻I'm</textarea
         >
         <textarea rows="1" class="editText-name">Polin Sini</textarea>
-        <textarea
-          rows="1"
-          class="editText-medium"
-          style="background-color: #f0f0f0"
-        >
+        <textarea rows="1" class="editText-medium" style="background-color: #f0f0f0">
 UX/UI designer</textarea
         >
       </section>
@@ -55,14 +47,7 @@ UX/UI designer</textarea
           <input type="text" class="editText" value="English" />
           <span class="textMirror"></span>
 
-          <input
-            type="range"
-            id="volume-1"
-            class="volume"
-            min="0"
-            max="100"
-            value="30"
-          />
+          <input type="range" id="volume-1" class="volume" min="0" max="100" value="30" />
         </div>
         <div class="miniLanguagebox">
           <input type="text" class="editText" value="Russian" />
@@ -83,14 +68,7 @@ UX/UI designer</textarea
           <input type="text" class="editText" value="Chineese" />
           <span class="textMirror"></span>
 
-          <input
-            type="range"
-            id="volume-3"
-            class="volume"
-            min="0"
-            max="100"
-            value="40"
-          />
+          <input type="range" id="volume-3" class="volume" min="0" max="100" value="40" />
         </div>
       </section>
 
@@ -99,57 +77,66 @@ UX/UI designer</textarea
           <input type="text" class="editText-title" value="Experience" />
         </div>
 
-        <div class="articles-container">
-          <article id="first-exp" class="miniExperienceBox">
-            <textarea rows="1" class="editText-regular">
-Jun. 2023 - Present</textarea
-            >
-            <div class="Experience-big">
-              <div class="Experience-main">
-                <textarea class="editText-medium">Marketing Manager</textarea>
-                <textarea class="editText-regular">
-Pankayam | Full-time</textarea
-                >
-              </div>
-              <div></div>
-              <ul style="width: 100%">
-                <li style="width: 100%">
-                  <textarea
-                    rows="1"
-                    class="editText-regular"
-                    style="
-                      width: 100%;
-                      background-color: rgba(150, 150, 210, 0);
-                      color: white;
-                    "
-                  >
-Strategy development and planning of campaigns that promote the business and generate genuine traffic</textarea
-                  >
-                </li>
-
-                <li style="width: 100%">
-                  <textarea
-                    rows="1"
-                    class="editText-regular"
-                    style="
-                      width: 100%;
-                      background-color: rgba(150, 150, 210, 0);
-                      color: white;
-                    "
-                  >
-SEO Content Creation for Blogs, Website, Social media</textarea
-                  >
-                </li>
-              </ul>
+        <article id="first-exp" class="miniExperienceBox">
+          <div class="headExp">
+            <textarea rows="1" class="editText-regular">Jun. 2023 - Present</textarea>
+            <div class="editText-regular" id="now-exp" contenteditable="true">most recent</div>
+          </div>
+          <div class="Experience-big" style="width: 100%">
+            <div class="Experience-main">
+              <textarea rows="1" class="editText-medium">Marketing Manager</textarea>
+              <textarea rows="1" class="editText-regular">Pankayam | Full-time</textarea>
             </div>
-          </article>
-        </div>
+
+            <ul style="width: 100%" class="ul-edit">
+              <li style="width: 100%" contenteditable="true" class="editText-regular">
+                Strategy development and planning of campaigns that promote the business and
+                generate genuine traffic
+              </li>
+
+              <li contenteditable="true" style="width: 100%" class="editText-regular">
+                SEO Content Creation for Blogs, Website, Social media
+              </li>
+            </ul>
+          </div>
+        </article>
       </section>
 
       <section class="toolBox">
         <h1></h1>
         <input type="text" class="editText-title" value="Tools" />
-        <img src="tools.svg" alt="tools" />
+        <div class="allTools">
+          <div class="miniTools">
+            <textarea rows="1" class="editText-regular">design</textarea>
+            <div class="iconApp">
+              <img src="sources/Figma.svg" alt="Figma" />
+              <img src="sources/photoshop.svg" alt="photoshop" />
+              <img src="sources/illustrator.svg" alt="illustrator" />
+              <img src="sources/Notion.svg" alt="Notion" />
+              <img src="sources/Meet.svg" alt="Meet" />
+              <img src="sources/premiere.svg" alt="premiere" />
+            </div>
+          </div>
+
+          <div class="miniTools">
+            <textarea rows="1" class="editText-regular">no-cose</textarea>
+            <div class="iconApp">
+              <img src="sources/Zapìer.svg" alt="Zapìer" />
+              <img src="sources/Webflow.svg" alt="Webflow" />
+              <img src="sources/Framer.svg" alt="Framer" />
+              <img src="sources/Wordpress.svg" alt="Wordpress" />
+            </div>
+          </div>
+
+          <div class="miniTools">
+            <textarea rows="1" class="editText-regular">artoficial intelligence</textarea>
+            <div class="iconApp">
+              <img src="sources/ChatGPT_1.svg" alt="ChatGPT_1" />
+              <img src="sources/Copilot.svg" alt="Copilot" />
+              <img src="sources/midjourney.svg" alt="midjourney_2" />
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="educationBox">
@@ -164,9 +151,7 @@ SEO Content Creation for Blogs, Website, Social media</textarea
 #UX #UI #research #DesignSystem #Ui #wireframing #figma #Ux</textarea
               >
             </div>
-            <textarea rows="1" class="editText-regular" style="margin: 1%">
-Coursera</textarea
-            >
+            <textarea rows="1" class="editText-regular" style="margin: 1%">Coursera</textarea>
           </article>
         </div>
       </section>
@@ -183,9 +168,7 @@ Coursera</textarea
           <textarea rows="1" class="editText-medium">
 Let´s chat! I´m ready to work on excinting projects</textarea
           >
-          <textarea rows="1" class="editText-regular">
-srkarthik.designscape@gmail.com</textarea
-          >
+          <textarea rows="1" class="editText-regular">srkarthik.designscape@gmail.com</textarea>
         </section>
       </div>
     </main>

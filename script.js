@@ -1,4 +1,3 @@
-//localStorage.clear()
 document.querySelectorAll('section').forEach((section) => {
   section.addEventListener('click', function (e) {
     //mousedown
@@ -33,14 +32,14 @@ function createArticle(date, position, company, ...descriptions) {
                     <textarea rows="1" class="editText-medium">${position}</textarea>
                     <textarea rows="1" class="editText-regular">${company}</textarea>
                 </div>
-                <ul style="width: 100%;">
+                <ul style="width: 100%;" class="ul-edit">
                      ${descriptions
                        .map(
                          (desc) => `
-                        <li style="width: 100%;">
-                            <textarea rows="1" class="editText-regular" style="width:100%;">${desc}</textarea>
+                        <li style="width: 100%; margin-left: auto;" contenteditable="true" class="editText-regular">
+                            ${desc}
                         </li>
-                    `
+                    `,
                        )
                        .join('')}
                 </ul>
@@ -79,26 +78,26 @@ function addArticle(htmlClass, fun) {
 }
 
 addArticle(
-  '.articles-container',
+  '.experienceBox',
   createArticle(
     '2017 - Present',
     'Graphic / Web designer',
     'Freelance',
     'Development of internal projects from scratch, product design of brands ',
     'Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary.',
-    'Landing page, webapps and hybrid apps'
-  )
+    'Landing page, webapps and hybrid apps',
+  ),
 );
 addArticle(
-  '.articles-container',
+  '.experienceBox',
   createArticle(
     'Sep. 2021 - Jun. 2023',
     'Legal Assistant',
     'Law Firm | Intern',
     'Provide administrative support to lawyer and enhance office effectiveness',
     'repare case briefs and summarize depositions, interrogatories and testimony',
-    'Handle communication with clients, witnesses etc.'
-  )
+    'Handle communication with clients, witnesses etc.',
+  ),
 );
 
 addArticle(
@@ -107,32 +106,21 @@ addArticle(
     '2017 - 2022',
     'Law',
     '#law #legalStudies #contracts #internationalLaws',
-    'University of Kerala'
-  )
+    'University of Kerala',
+  ),
 );
 addArticle(
   '.articles-container-edu',
-  createEduArticle(
-    '2017',
-    'Graphic design',
-    '#branding #web #illustration #adobe',
-    'Coursrea'
-  )
+  createEduArticle('2017', 'Graphic design', '#branding #web #illustration #adobe', 'Coursrea'),
 );
 
 addArticle('.articles-container-interest', createInterestInput('branding'));
 addArticle('.articles-container-interest', createInterestInput('design'));
 addArticle('.articles-container-interest', createInterestInput('photography'));
-addArticle(
-  '.articles-container-interest',
-  createInterestInput('artificial intelligence')
-);
+addArticle('.articles-container-interest', createInterestInput('artificial intelligence'));
 addArticle('.articles-container-interest', createInterestInput('illustration'));
 addArticle('.articles-container-interest', createInterestInput('typography'));
-addArticle(
-  '.articles-container-interest',
-  createInterestInput('social networks')
-);
+addArticle('.articles-container-interest', createInterestInput('social networks'));
 addArticle('.articles-container-interest', createInterestInput('research'));
 addArticle('.articles-container-interest', createInterestInput('dron pilot'));
 addArticle('.articles-container-interest', createInterestInput('games'));
@@ -159,32 +147,31 @@ function changeInputWidth(input) {
 function changeHeight(textarea) {
   textarea.style.height = 'auto';
   textarea.style.height = `${textarea.scrollHeight}px`;
-  console.log(textarea.textContent, textarea.style.height);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  window.addEventListener('resize', function () {
-    document.querySelectorAll('textarea').forEach((textarea) => {
-      changeHeight(textarea);
-    });
-  });
-
-  textareas.forEach((textarea, index) => {
-    textarea.addEventListener('input', function () {
-      localStorage.setItem(`textarea-${index}`, this.value);
-      changeHeight(this);
-    });
-
+window.addEventListener('resize', function () {
+  document.querySelectorAll('textarea').forEach((textarea) => {
     changeHeight(textarea);
   });
-  inputs.forEach((input, index) => {
-    input.addEventListener('input', function () {
-      localStorage.setItem(`input-${index}`, this.value);
-      changeInputWidth(this);
-    });
-    changeInputWidth(input);
+});
+
+textareas.forEach((textarea, index) => {
+  textarea.addEventListener('input', function () {
+    localStorage.setItem(`textarea-${index}`, this.value);
+    changeHeight(this);
   });
 
+  changeHeight(textarea);
+});
+inputs.forEach((input, index) => {
+  input.addEventListener('input', function () {
+    localStorage.setItem(`input-${index}`, this.value);
+    changeInputWidth(this);
+  });
+  changeInputWidth(input);
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   textareas.forEach((textarea, index) => {
     const savedText = localStorage.getItem(`textarea-${index}`);
 
@@ -204,6 +191,32 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+const lists = document.querySelectorAll('.ul-edit');
+console.log(lists.type);
+lists.forEach((list) =>
+  list.addEventListener('keydown', function (e) {
+    const currentItem = e.target;
+
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (currentItem.textContent.trim()) {
+        const newItem = document.createElement('li');
+        newItem.className = 'editText-regular';
+        newItem.contentEditable = true;
+        currentItem.after(newItem);
+        newItem.focus();
+      }
+    }
+
+    if (e.key === 'Backspace' && !currentItem.textContent && list.children.length > 1) {
+      e.preventDefault();
+      const prevItem = currentItem.previousElementSibling;
+      currentItem.remove();
+      prevItem.focus();
+    }
+  }),
+);
+
 function changeForPDF(container) {
   container.className = 'pdf-edit';
 
@@ -215,14 +228,16 @@ function changeForPDF(container) {
   });
 
   container.querySelectorAll('textarea, input').forEach((el) => {
-    const type = el.getAttribute('type');
+    if (el.tagName === 'TEXTAREA') {
+      changeHeight(el);
+    }
 
-    if (type === 'range' || el.classList.contains('volume')) {
+    if (el.classList.contains('volume')) {
       const visualBar = document.createElement('div');
       visualBar.setAttribute('div-for-pdf', 'true');
-      visualBar.style.width = '90%';
+      visualBar.style.width = '70%';
       visualBar.style.height = '6px';
-      visualBar.style.background = '#ccc';
+      visualBar.style.background = 'gray';
       visualBar.style.borderRadius = '3px';
       visualBar.style.marginTop = '6px';
       visualBar.style.position = 'relative';
@@ -242,15 +257,17 @@ function changeForPDF(container) {
     const div = document.createElement('div');
     div.textContent = el.value || el.textContent || el.innerText;
     div.className = el.className;
+    div.style.backgroundColor = el.style.backgroundColor;
     div.style.cssText = el.style.cssText;
     div.style.overflow = 'hidden';
     div.contentEditable = 'false';
-    div.setAttribute('div-for-pdf', 'true');
 
+    div.setAttribute('div-for-pdf', 'true');
+    /*
     if (el.tagName === 'TEXTAREA') {
       div.style.height = `${el.scrollHeight}px`;
     }
-
+*/
     el.style.display = 'none';
     el.parentNode.insertBefore(div, el.nextSibling);
   });
@@ -267,11 +284,7 @@ function deleteChangePDF(container) {
 
     container.querySelectorAll('.volume').forEach((range) => {
       const next = range.nextElementSibling;
-      if (
-        next &&
-        next.hasAttribute('div-for-pdf') &&
-        next.querySelector('div')
-      ) {
+      if (next && next.hasAttribute('div-for-pdf') && next.querySelector('div')) {
         next.remove();
         range.style.display = '';
       }
@@ -282,6 +295,8 @@ function deleteChangePDF(container) {
     });
   });
 }
+import html2canvas from 'html2canvas';
+//import { jsPDF } from 'jspdf';
 
 document.getElementById('download').addEventListener('click', function () {
   alert('Подтвердите скачивание файла. Это займет немного времени');
@@ -297,6 +312,7 @@ document.getElementById('download').addEventListener('click', function () {
     windowHeight: container.scrollHeight,
   }).then((canvas) => {
     const imgData = canvas.toDataURL('image/png');
+    /* global jspdf */
     const pdf = new jspdf.jsPDF('p', 'pt', 'a4');
 
     const pageWidth = 595 * 0.9;
